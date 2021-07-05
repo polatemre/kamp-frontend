@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
-@Component({
+@Component({ //Attribute gibi
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'] //array
 })
 export class AppComponent {
-  title = 'northwind';
+  title: string = "northwind";
+  user: string = "Emre Polat";
+  
 }
