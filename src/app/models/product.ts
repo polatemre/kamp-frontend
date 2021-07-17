@@ -1,5 +1,5 @@
-export interface Product{ //export=public
-    productId:number; //bütün sayı tipleri için number kullanılır
+export interface Product{ //export=public, interfacelerin önüne I konmaz.
+    productId:number; //bütün sayı tipleri(int,float,double,decimal) için number kullanılır
     categoryId:number;
     productName:string;
     unitsInStock:number;
