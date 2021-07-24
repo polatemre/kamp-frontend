@@ -2,21 +2,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductResponseModel } from '../models/productResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  apiUrl = 'https://localhost:44343/api/products/getall';
+  apiUrl = 'https://localhost:44343/api/';
   
   //sanki classın içinde tanımlanmış gibi kullanabiliriz httpClient'i
   constructor(private httpClient: HttpClient) { }
 
   //C#'ta erişemiyorduk ama javascriptte httpClient'e erişebiliriz.
   //Gelen datayı ProductResponseModel'e map edecek.
-  getProducts():Observable<ProductResponseModel> {
-    return this.httpClient.get<ProductResponseModel>(this.apiUrl)
+  getProducts():Observable<ListResponseModel<Product>> {
+    let newPath = this.apiUrl + "products/getall"//let: sadece bu blokta geçerli olur. C#, Java gibi.
+    return this.httpClient.get<ListResponseModel<Product>>(newPath)
+  }
+
+  getProductsByCategory(categoryId:number):Observable<ListResponseModel<Product>> {
+    let newPath = this.apiUrl + "products/getbycategory?categoryId=" + categoryId
+    return this.httpClient.get<ListResponseModel<Product>>(newPath)
   }
 }

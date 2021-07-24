@@ -6,19 +6,19 @@ npm install -g @angular/cli
 ```
 ng new projeismi
 ```
-# Angular componenti oluşturmak için "src/app/components>" klasorundeyken yazılır
+# Angular uygulamasını başlatır ve tarayıcıda açar
+```
+ng serve --open
+```
+# Angular componenti oluşturmak için "src/app/components" klasorundeyken yazılır
 ```
 ng g component componentIsmi
 ```
-# Angular uygulamasını başlatır ve tarayıcıda açar
+# Angular servisi oluşturur
 ```
 ng g service serviceIsmi
 ```
 # Bootstrap paketini kurmak için
 ```
 npm install bootstrap@versiyonismi
-```
-# Angular uygulamasını başlatır ve tarayıcıda açar
-```
-ng serve --open
 ```
